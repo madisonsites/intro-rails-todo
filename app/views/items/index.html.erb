@@ -1,0 +1,13 @@
+<h1>todos</h1>
+<%= link_to 'Add task', new_item_path %>
+
+<% @items.each do |item| %>
+
+  <ul><%= item.title %></ul>
+  <ul><%= link_to 'Edit', edit_item_path(item.id) %>
+      <%= link_to 'Delete', item_path(item),
+                            method: :delete
+                            # data: {confirm: 'Are you sure?'}
+                            %>
+  </ul>
+  <% end %>
